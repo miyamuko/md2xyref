@@ -52,6 +52,20 @@ module XyReference
         end
       end
     end
+
+    def lookup(type, title)
+      file = self.index[title]
+      return file if file
+
+      if type == "Accessor"
+        parent = title.gsub(/-[^-]+$/, "")
+        file = lookup(type, parent) if parent != title
+      end
+      warn "Unknown src file: #{title}" unless file
+
+      file
+    end
+
   end
 
   class MarkdownParser
@@ -75,7 +89,7 @@ module XyReference
         desc, seealso = desc.split(/See Also:/, 2)
         seealso = seealso.scan(/^ *\* (\S*)/).map{|e| e[0] } if seealso
 
-        file = search_file(type, title)
+        file = self.file_index.lookup(type, title)
 
         c = Chapter.new(type, title, arguments, package, desc.strip, seealso, file)
         self.book << c
@@ -84,19 +98,6 @@ module XyReference
           package = arguments
         end
       end
-    end
-
-    def search_file(type, title)
-      file = self.file_index.index[title]
-      return file if file
-
-      if type == "Accessor"
-        parent = title.gsub(/-[^-]+$/, "")
-        file = search_file(type, parent) if parent != title
-      end
-      warn "Unknown src file: #{title}" unless file
-
-      file
     end
 
     def cleanup(md)
@@ -137,7 +138,7 @@ module XyReference
 
 end
 
-if ARGV.length < 2
+if ARGV.length != 2
   $stderr.puts "Usage: #{$0} foo.md src_dir"
   exit 1
 end
