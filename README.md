@@ -2,8 +2,8 @@
 
 ## DESCRIPTION
 
-Markdown Œ`Ž®‚Å‘‚¢‚½ƒŠƒtƒ@ƒŒƒ“ƒX‚ð xyzzy ‚ÌƒŠƒtƒ@ƒŒƒ“ƒX (XML) ‚É•ÏŠ·‚·‚éƒXƒNƒŠƒvƒgB
-Ruby 1.9 ‚ª•K—v‚Å‚·B
+Markdown å½¢å¼ã§æ›¸ã„ãŸãƒªãƒ•ã‚¡ãƒ¬ãƒ³ã‚¹ã‚’ xyzzy ã®ãƒªãƒ•ã‚¡ãƒ¬ãƒ³ã‚¹ (XML) ã«å¤‰æ›ã™ã‚‹ã‚¹ã‚¯ãƒªãƒ—ãƒˆã€‚
+Ruby 1.9 ãŒå¿…è¦ã§ã™ã€‚
 
 ## USAGE
 
@@ -14,17 +14,17 @@ Ruby 1.9 ‚ª•K—v‚Å‚·B
 
 ## REFERENCE
 
-Markdown ‚Å‚ÌƒŠƒtƒ@ƒŒƒ“ƒX‚ÍˆÈ‰º‚Ì‚æ‚¤‚É‹Lq‚·‚éB
+Markdown ã§ã®ãƒªãƒ•ã‚¡ãƒ¬ãƒ³ã‚¹ã¯ä»¥ä¸‹ã®ã‚ˆã†ã«è¨˜è¿°ã™ã‚‹ã€‚
 
 ```
 ### Package: md2xyref.sample
 
-md2xyref ‚ÌƒTƒ“ƒvƒ‹ƒpƒbƒP[ƒW‚Å‚·B
+md2xyref ã®ã‚µãƒ³ãƒ—ãƒ«ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ã§ã™ã€‚
 
 
 ### Function: add X Y
 
-X ‚Æ Y ‚ð‘«‚µ‚½Œ‹‰Ê‚ð•Ô‚µ‚Ü‚·B
+X ã¨ Y ã‚’è¶³ã—ãŸçµæžœã‚’è¿”ã—ã¾ã™ã€‚
 
 __See Also:__
 
@@ -32,11 +32,11 @@ __See Also:__
 
 ### Function: sub X Y
 
-X ‚©‚ç Y ‚ðˆø‚¢‚½Œ‹‰Ê‚ð•Ô‚µ‚Ü‚·B
+X ã‹ã‚‰ Y ã‚’å¼•ã„ãŸçµæžœã‚’è¿”ã—ã¾ã™ã€‚
 
 __See Also:__
 
   * add
 ```
 
-‹ï‘Ì“I‚ÈƒTƒ“ƒvƒ‹‚Í <https://raw.github.com/miyamuko/http-client/master/reference/http-client.md> ‚ðŽQÆB
+å…·ä½“çš„ãªã‚µãƒ³ãƒ—ãƒ«ã¯ <https://raw.github.com/miyamuko/http-client/master/reference/http-client.md> ã‚’å‚ç…§ã€‚
