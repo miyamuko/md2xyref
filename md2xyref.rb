@@ -16,7 +16,6 @@ module XyReference
       "Accessor " => "データ型",
       "Command " => "関数",
       "Function" => "関数",
-      "Accessor" => "関数",
       "Macro" => "マクロ",
     }
 
