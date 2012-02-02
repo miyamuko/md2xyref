@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  -*- Mode: xmldoc -*-  -->
+<!DOCTYPE book [
+<!ELEMENT book (chapter*)>
+<!ELEMENT chapter (title,type,arguments?,package?,description,seealso*,link*,section,file?)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT type (#PCDATA)>
+<!ELEMENT arguments (#PCDATA)>
+<!ELEMENT package (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT seealso (#PCDATA)>
+<!ELEMENT link (#PCDATA)>
+<!ELEMENT section (#PCDATA)>
+<!ELEMENT file (#PCDATA)>
+]>
+<!--
+book
+  └ chapter
+      ├ title
+      ├ type           Function, Special Form, Macro
+      │                Misc, Tips, Variable, BufferLocal
+      │                Keyword, Accessor
+      ├ arguments      VariableやTipsはなし
+      ├ package        Tipsはなし
+      ├ description
+      ├ seealso        0?n個
+      ├ link           0?n個
+      ├ section        データ型 変数と定数 制御構造
+      │                パッケージ 関数 マクロ シンボル
+      │                数値 文字 文字列 シーケンス
+      │                リスト ハッシュ 配列 チャンク
+      │                評価 入出力 ファイルシステム
+      │                エラー ウィンドウ バッファ
+      │                ミニバッファ リージョン モード
+      │                シンタックス キーマップ テキスト
+      │                検索・正規表現 ダイアログ 日付・時間
+      │                メニュー ファイラ ポジション
+      │                プロセス システム その他
+      └ file            0 or 1
+-->
+<!--
+<!ELEMENT (a, b)>     順番に出現
+<!ELEMENT (a|b|c)>    どれか１つが出現
+<!ELEMENT x (a?)>     0または1出現
+<!ELEMENT x (a+)>     1回以上出現
+<!ELEMENT x (a*)>     0回以上出現
+-->
+<book>
+<% for chapter in book %>
+
+<chapter>
+<title><%=h chapter.title %></title>
+<type><%=h chapter.type %></type>
+<% if chapter.arguments %>
+<arguments><%=h chapter.arguments %></arguments>
+<% end %>
+<% if chapter.package %>
+<package><%=h chapter.package %></package>
+<% end %>
+<description>
+<%=h chapter.description %>
+
+</description>
+<% for e in chapter.seealso %>
+<seealso><%=h e %></seealso>
+<% end %>
+<section><%=h chapter.section %></section>
+<file><%=h chapter.file %></file>
+</chapter>
+<% end %>
+</book>
