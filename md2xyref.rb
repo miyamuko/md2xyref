@@ -77,7 +77,7 @@ module XyReference
 
     def parse(md)
       package = nil
-      md.scan(/^### (.+?): (.+?)\n(.+?)(?=^###? )/m) do |md|
+      md.scan(/^### (.+?): (.+?)\n(.+?)(?=(^###? |\z))/m) do |md|
         type, arguments, desc = [$1, $2, $3].map{|e| cleanup(e) }
         if arguments =~ / /
           title = arguments.split(/ /).first
@@ -94,7 +94,7 @@ module XyReference
         self.book << c
 
         if type == "Package"
-          package = arguments
+          package = title
         end
       end
     end
