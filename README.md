@@ -39,4 +39,4 @@ __See Also:__
   * add
 ```
 
-具体的なサンプルは <https://raw.github.com/miyamuko/http-client/master/reference/http-client.md> を参照。
+具体的なサンプルは <https://github.com/miyamuko/http-client/blob/master/reference/http-client.md> を参照。
