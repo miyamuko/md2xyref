@@ -36,7 +36,7 @@ module XyReference
 
     def initialize(src_dir)
       self.index = {}
-      scan(src_dir)
+      scan(src_dir) if src_dir
     end
 
     def scan(src_dir)
@@ -137,8 +137,8 @@ module XyReference
 
 end
 
-if ARGV.length != 2
-  $stderr.puts "Usage: #{$0} foo.md src_dir"
+if ARGV.length < 1 or 2 < ARGV.length
+  $stderr.puts "Usage: #{$0} foo.md [src_dir]"
   exit 1
 end
 
