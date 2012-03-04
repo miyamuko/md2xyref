@@ -45,7 +45,7 @@ module XyReference
           next if src_file =~ /\/tests?\//
           next if src_file =~ /\/t\//
           src = File.read(src_file)
-          src.scan(/^[ \t]*\(def[a-z0-9-]+\s+[(:]*([^\s()]+)/m) do |m|
+          src.scan(/^[ \t]*\(def[a-z0-9-]*\s+[(:]*([^\s()]+)/m) do |m|
             self.index[m[0]] = src_file
           end
         end
